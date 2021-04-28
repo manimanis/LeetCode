@@ -26,7 +26,7 @@ class TestSolutionApril(unittest.TestCase):
     def testSol26Apr(self):
         from April2021.sol_26_slow import Solution as Solution1
         from April2021.sol_26_fast import Solution as Solution2, test_cases
-        
+
         sol = Solution1()
         for inp, out in test_cases:
             res = sol.furthestBuilding(*inp)
@@ -36,7 +36,15 @@ class TestSolutionApril(unittest.TestCase):
         for inp, out in test_cases:
             res = sol.furthestBuilding(*inp)
             self.assertEqual(out, res)
-        
+
+    def testSol28Apr(self):
+        from April2021.sol28 import Solution, test_cases
+
+        sol = Solution()
+        for inp, out in test_cases:
+            res = sol.uniquePathsWithObstacles(inp)
+            self.assertEqual(out, res, inp)
+
 
 if __name__ == '__main__':
     unittest.main()

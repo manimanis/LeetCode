@@ -2,6 +2,15 @@
 https://leetcode.com/explore/challenge/card/april-leetcoding-challenge-2021/593/week-1-april-1st-april-7th/3694/
 """
 from typing import List
+from common.testcases import make_tests
+
+
+test_cases = [
+    ((["10","0001","111001","1","0"], 5, 3), 4), # 4
+    ((["10","0","1"], 1, 1), 2), # 2
+    ((["10","0001","111001","1","0"], 4, 3), 3), # 3
+    ((["111","1000","1000","1000"], 9, 3), 3) #3
+]
 
 
 class Solution:
@@ -24,15 +33,5 @@ class Solution:
         return count
 
 
-test_cases = [
-    (["10","0001","111001","1","0"], 5, 3), # 4
-    (["10","0","1"], 1, 1), # 2
-    (["10","0001","111001","1","0"], 4, 3), # 3
-    (["111","1000","1000","1000"], 9, 3) #3
-]
-sol = Solution()
-for case in test_cases:
-    print(case)
-    print(sol.findMaxForm(*case))
-    print()
-    print()
+if __name__ == '__main__':
+    make_tests(test_cases, Solution, 'findMaxForm')

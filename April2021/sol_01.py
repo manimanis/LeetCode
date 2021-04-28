@@ -1,6 +1,18 @@
 """Palindrome Linked List.
 https://leetcode.com/explore/challenge/card/april-leetcoding-challenge-2021/593/week-1-april-1st-april-7th/3693/"""
-from April2021.nodelist import ListNode
+from common.nodelist import ListNode
+from common.testcases import make_tests
+
+
+test_cases = [
+    (([1, 2, 2, 1],), True),
+    (([1, 2],), False),
+    (([1, 2, 2],), False),
+    (([1, 1, 2, 1],), False),
+    (([],), True),
+    (([9],), True),
+    (([7, 7],), True)
+]
 
 
 class Solution:
@@ -63,19 +75,5 @@ class Solution:
         return True
 
 
-test_cases = [
-    [1, 2, 2, 1],
-    [1, 2],
-    [1, 2, 2],
-    [1, 1, 2, 1],
-    [],
-    [9],
-    [7, 7]
-]
-sol = Solution()
-for case in test_cases:
-    lst = ListNode.build(case)
-    print(case)
-    print(sol.isPalindrome(lst))
-    print()
-    print()
+if __name__ == '__main__':
+    make_tests(test_cases, Solution, 'isPalindrome', lambda tc: (ListNode.build(tc),))
