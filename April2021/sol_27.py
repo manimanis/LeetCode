@@ -1,7 +1,7 @@
 """Power of Three.
 https://leetcode.com/explore/challenge/card/april-leetcoding-challenge-2021/596/week-4-april-22nd-april-28th/3722/
 """
-from testcases import make_tests
+from common.testcases import make_tests
 
 
 test_cases = [
