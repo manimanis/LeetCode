@@ -49,6 +49,14 @@ class TestSolutionApril(unittest.TestCase):
         for inp, out in test_cases:
             res = sol.searchRange(*inp)
             self.assertEqual(out, res, inp)
+    
+    def testSol30Apr(self):
+        from April2021.sol_30 import Solution, test_cases
+
+        sol = Solution()
+        for inp, out in test_cases:
+            res = sol.powerfulIntegers(*inp)
+            self.assertEqual(out, res, inp)
 
 if __name__ == '__main__':
     unittest.main()
