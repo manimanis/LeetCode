@@ -40,12 +40,8 @@ test_cases = [
 
 class Solution:
     def minMoves2(self, nums: List[int]) -> int: 
-        nums.sort()    
-        n = len(nums)
-        m = nums[len(nums) // 2]
-        s = sum(abs(v-m) for v in nums)
-        # print(m, s)
-        return s
+        nums.sort()
+        return sum(abs(v-nums[len(nums)//2]) for v in nums)
 
 
 if __name__ == '__main__':
